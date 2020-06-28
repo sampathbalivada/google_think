@@ -106,7 +106,7 @@ class HomePage extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  height: _height * 0.67,
+                  height: _height * 0.55,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -114,13 +114,16 @@ class HomePage extends StatelessWidget {
                     Image.asset(
                       "assets/images/fuchsia_logo.png",
                       fit: BoxFit.fill,
-                      height: 26,
+                      height: _height * 0.06,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: _width * 0.03,
                     ),
-                    Image.asset(
-                      "assets/images/footer.png",
+                    Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Image.asset(
+                        "assets/images/footer.png",
+                      ),
                     ),
                   ],
                 ),
@@ -131,12 +134,12 @@ class HomePage extends StatelessWidget {
       ),
       showArrow: true,
       child: Padding(
-        padding: EdgeInsets.only(bottom: _height * 0.017),
+        padding: EdgeInsets.only(bottom: _height * 0.06),
         child: Material(
           color: Colors.transparent,
           child: Text(
             "Swipe Up",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
           ),
         ),
       ),
@@ -156,12 +159,15 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
     final _width = MediaQuery.of(context).size.width;
     return Stack(
       children: [
-        Container(
-          child: Image.asset(
-            "assets/images/background.png",
-            fit: BoxFit.fill,
-            width: _width,
-            height: _height,
+        Opacity(
+          opacity: 0.5,
+          child: Container(
+            child: Image.asset(
+              "assets/images/background.png",
+              fit: BoxFit.fill,
+              width: _width,
+              height: _height,
+            ),
           ),
         ),
         Scaffold(
@@ -251,6 +257,11 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                   height: 130,
                 ),
               ),
+              Center(
+                  child: Text(
+                'Simulation 1',
+                style: TextStyle(color: Color(0xfff8f8f8), fontSize: 28),
+              )),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
                 child: Container(
@@ -269,17 +280,21 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                 padding: const EdgeInsets.only(top: 30, bottom: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset(
                       "assets/images/fuchsia_logo.png",
                       fit: BoxFit.fill,
-                      height: 26,
+                      height: _height * 0.06,
                     ),
                     SizedBox(
-                      width: 10,
+                      width: _width * 0.03,
                     ),
-                    Image.asset(
-                      "assets/images/footer.png",
+                    Padding(
+                      padding: EdgeInsets.only(top: 5),
+                      child: Image.asset(
+                        "assets/images/footer.png",
+                      ),
                     ),
                   ],
                 ),
