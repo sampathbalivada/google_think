@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:swipe_up/swipe_up.dart';
-// TODO: Comment while commiting
 // import './test_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +19,7 @@ class HomePage extends StatelessWidget {
         children: [
           Container(
             child: Image.asset(
-              "images/background.png",
+              "assets/images/background.png",
               fit: BoxFit.fill,
               width: _width,
               height: _height,
@@ -35,7 +34,7 @@ class HomePage extends StatelessWidget {
                     top: _height * 0.018,
                     right: _width * 0.014,
                   ),
-                  child: Image.asset("images/fuchsia_logo.png"),
+                  child: Image.asset("assets/images/fuchsia_logo.png"),
                 )
               ],
               backgroundColor: Colors.transparent,
@@ -45,7 +44,7 @@ class HomePage extends StatelessWidget {
                   left: _width * 0.014,
                 ),
                 child: Image.asset(
-                  "images/logo.png",
+                  "assets/images/logo.png",
                 ),
               ),
               title: Padding(
@@ -63,9 +62,12 @@ class HomePage extends StatelessWidget {
                 SizedBox(
                   height: _height * 0.04,
                 ),
-                CircleAvatar(
-                  radius: 58,
-                  backgroundColor: Colors.white,
+                Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: CircleAvatar(
+                    radius: 58,
+                    backgroundColor: Colors.white,
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -79,7 +81,7 @@ class HomePage extends StatelessWidget {
                           "27th June 2035",
                           style: TextStyle(color: Colors.white),
                         ),
-                        width: _width * 0.26,
+                        width: _width * 0.29,
                       ),
                       SizedBox(
                         child: Text(
@@ -91,9 +93,9 @@ class HomePage extends StatelessWidget {
                       SizedBox(
                         child: Row(
                           children: [
-                            Icon(
-                              Icons.battery_full,
-                              color: Colors.white,
+                            Image.asset('assets/images/battery.png'),
+                            SizedBox(
+                              width: 2,
                             ),
                             Text(
                               "99%",
@@ -111,7 +113,7 @@ class HomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        "images/fuchsia_logo.png",
+                        "assets/images/fuchsia_logo.png",
                         fit: BoxFit.fill,
                         height: 26,
                       ),
@@ -119,7 +121,7 @@ class HomePage extends StatelessWidget {
                         width: 10,
                       ),
                       Image.asset(
-                        "images/footer.png",
+                        "assets/images/footer.png",
                       ),
                     ],
                   ),
@@ -158,7 +160,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
       children: [
         Container(
           child: Image.asset(
-            "images/background.png",
+            "assets/images/background.png",
             fit: BoxFit.fill,
             width: _width,
             height: _height,
@@ -173,7 +175,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                   top: _height * 0.018,
                   right: _width * 0.014,
                 ),
-                child: Image.asset("images/fuchsia_logo.png"),
+                child: Image.asset("assets/images/fuchsia_logo.png"),
               )
             ],
             backgroundColor: Colors.transparent,
@@ -183,7 +185,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                 left: _width * 0.014,
               ),
               child: Image.asset(
-                "images/logo.png",
+                "assets/images/logo.png",
               ),
             ),
             title: Padding(
@@ -271,7 +273,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Image.asset(
-                      "images/fuchsia_logo.png",
+                      "assets/images/fuchsia_logo.png",
                       fit: BoxFit.fill,
                       height: 26,
                     ),
@@ -279,7 +281,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                       width: 10,
                     ),
                     Image.asset(
-                      "images/footer.png",
+                      "assets/images/footer.png",
                     ),
                   ],
                 ),
