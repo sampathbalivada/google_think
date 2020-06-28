@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_think/utils/profile.dart';
-import 'package:swipedetector/swipedetector.dart';
 
 import 'utils/appbar.dart';
 import 'utils/stats_widget.dart';
@@ -189,5 +188,4 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
       ],
     );
   }
-
 }
