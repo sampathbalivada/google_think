@@ -114,13 +114,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
-  swipe_up:
+  swipedetector:
     dependency: "direct main"
     description:
-      name: swipe_up
+      name: swipedetector
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.2.0"
   term_glyph:
     dependency: transitive
     description:
@@ -158,3 +158,4 @@ packages:
     version: "0.0.8"
 sdks:
   dart: ">=2.7.0 <3.0.0"
+  flutter: ">=0.1.4 <2.0.0"
