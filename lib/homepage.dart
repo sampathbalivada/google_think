@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:swipe_up/swipe_up.dart';
+import 'package:google_think/utils/stats_widget.dart';
+import 'package:swipedetector/swipedetector.dart';
 import 'slidedHome.dart';
+import 'utils/profile.dart';
 // import './test_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -9,14 +11,15 @@ class HomePage extends StatelessWidget {
     var _height = MediaQuery.of(context).size.height;
     var _width = MediaQuery.of(context).size.width;
 
-    return SwipeUp(
-      color: Colors.white,
-      sensitivity: 0.5,
-      onSwipe: () {
-        Navigator.of(context).push(MaterialPageRoute(
-            builder: (BuildContext context) => HomeOnSwipe()));
+    return SwipeDetector(
+      onSwipeUp: () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (BuildContext context) => HomeOnSwipe(),
+          ),
+        );
       },
-      body: Stack(
+      child: Stack(
         children: [
           Container(
             child: Image.asset(
@@ -58,91 +61,44 @@ class HomePage extends StatelessWidget {
               ),
               centerTitle: true,
             ),
-            body: ListView(
+            body: Column(
               children: [
-                SizedBox(
-                  height: _height * 0.04,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: _width * 0.028),
-                  child: CircleAvatar(
-                    radius: 58,
-                    backgroundColor: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  height: _height * 0.04,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                ListView(
+                  shrinkWrap: true,
                   children: [
                     SizedBox(
-                      child: Text(
-                        "27th June 2035",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      width: _width * 0.29,
+                      height: _height * 0.04,
+                    ),
+                    Hero(
+                      tag: 'profile_picture',
+                      child: ProfileAvatar(radius: 58),
                     ),
                     SizedBox(
-                      child: Text(
-                        "10:00 AM",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      width: _width * 0.27,
+                      height: _height * 0.04,
                     ),
-                    SizedBox(
-                      child: Row(
-                        children: [
-                          Image.asset('assets/images/battery.png'),
-                          SizedBox(
-                            width: 2,
-                          ),
-                          Text(
-                            "99%",
-                            style: TextStyle(color: Colors.white),
-                          )
-                        ],
-                      ),
+                    Hero(
+                      tag: 'stats',
+                      child: StatsRow(),
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: _height * 0.57,
+                Expanded(child: Container()),
+                Icon(
+                  Icons.keyboard_arrow_up,
+                  color: Colors.white,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/images/fuchsia_logo.png",
-                      fit: BoxFit.fill,
-                      height: _height * 0.06,
-                    ),
-                    SizedBox(
-                      width: _width * 0.03,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 5),
-                      child: Image.asset(
-                        "assets/images/footer.png",
-                      ),
-                    ),
-                  ],
+                Text(
+                  'Swipe Up',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: _width * 0.05),
                 ),
+                SizedBox(height: 16),
               ],
             ),
           ),
         ],
-      ),
-      showArrow: true,
-      child: Padding(
-        padding: EdgeInsets.only(bottom: _height * 0.06),
-        child: Material(
-          color: Colors.transparent,
-          child: Text(
-            "Swipe Up",
-            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
-          ),
-        ),
       ),
     );
   }
