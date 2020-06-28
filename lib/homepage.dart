@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_think/utils/appbar.dart';
 import 'package:google_think/utils/stats_widget.dart';
 import 'package:swipedetector/swipedetector.dart';
 import 'slidedHome.dart';
@@ -31,41 +32,12 @@ class HomePage extends StatelessWidget {
           ),
           Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: AppBar(
-              actions: [
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: _height * 0.018,
-                    right: _width * 0.014,
-                  ),
-                  child: Image.asset("assets/images/fuchsia_logo.png"),
-                )
-              ],
-              backgroundColor: Colors.transparent,
-              leading: Padding(
-                padding: EdgeInsets.only(
-                  top: _height * 0.018,
-                  left: _width * 0.014,
-                ),
-                child: Image.asset(
-                  "assets/images/logo.png",
-                ),
-              ),
-              title: Padding(
-                padding: EdgeInsets.only(
-                  top: _height * 0.018,
-                ),
-                child: Text(
-                  "Google Think",
-                ),
-              ),
-              centerTitle: true,
-            ),
             body: Column(
               children: [
                 ListView(
                   shrinkWrap: true,
                   children: [
+                    MyAppBar(),
                     SizedBox(
                       height: _height * 0.04,
                     ),

@@ -31,9 +31,10 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          appBar: buildAppBar(_height, _width),
+          // appBar: buildAppBar(_height, _width),
           body: ListView(
             children: [
+              MyAppBar(),
               SizedBox(
                 height: _height * 0.04,
               ),
