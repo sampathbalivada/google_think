@@ -34,13 +34,9 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
           // appBar: buildAppBar(_height, _width),
           body: ListView(
             children: [
-              MyAppBar(),
+              HomeAppBar(),
               SizedBox(
                 height: _height * 0.04,
-              ),
-              Hero(
-                tag: 'profile_picture',
-                child: ProfileAvatar(radius: 58),
               ),
               SizedBox(
                 height: _height * 0.04,

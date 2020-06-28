@@ -15,6 +15,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: 'ProductSans',
         textTheme: TextTheme(
+          headline1: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+            fontWeight: FontWeight.bold
+          ),
+          headline2: TextStyle(
+            color: Colors.white,
+            fontSize: 20,
+          ),
           bodyText1: TextStyle(
             color: Colors.white,
           ),
