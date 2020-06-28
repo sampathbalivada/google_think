@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                   height: _height * 0.04,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: _width * 0.028),
                   child: CircleAvatar(
                     radius: 58,
                     backgroundColor: Colors.white,
