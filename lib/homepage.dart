@@ -63,7 +63,7 @@ class HomePage extends StatelessWidget {
                   height: _height * 0.04,
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 10),
+                  padding: EdgeInsets.only(left: _width * 0.028),
                   child: CircleAvatar(
                     radius: 58,
                     backgroundColor: Colors.white,
@@ -203,9 +203,12 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
               SizedBox(
                 height: _height * 0.04,
               ),
-              CircleAvatar(
-                radius: 58,
-                backgroundColor: Colors.white,
+              Padding(
+                padding: EdgeInsets.only(left: _width * 0.028),
+                child: CircleAvatar(
+                  radius: 58,
+                  backgroundColor: Colors.white,
+                ),
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -219,7 +222,7 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                         "27th June 2035",
                         style: TextStyle(color: Colors.white),
                       ),
-                      width: _width * 0.26,
+                      width: _width * 0.29,
                     ),
                     SizedBox(
                       child: Text(
@@ -229,12 +232,11 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                       width: _width * 0.27,
                     ),
                     SizedBox(
-                      // width: _width * 0.27,
                       child: Row(
                         children: [
-                          Icon(
-                            Icons.battery_full,
-                            color: Colors.white,
+                          Image.asset('assets/images/battery.png'),
+                          SizedBox(
+                            width: 2,
                           ),
                           Text(
                             "99%",
