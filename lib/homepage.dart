@@ -69,62 +69,60 @@ class HomePage extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(
-                    top: _height * 0.04,
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        child: Text(
-                          "27th June 2035",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        width: _width * 0.29,
-                      ),
-                      SizedBox(
-                        child: Text(
-                          "10:00 AM",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                        width: _width * 0.27,
-                      ),
-                      SizedBox(
-                        child: Row(
-                          children: [
-                            Image.asset('assets/images/battery.png'),
-                            SizedBox(
-                              width: 2,
-                            ),
-                            Text(
-                              "99%",
-                              style: TextStyle(color: Colors.white),
-                            )
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                SizedBox(
+                  height: _height * 0.04,
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: _height * 0.6),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        "assets/images/fuchsia_logo.png",
-                        fit: BoxFit.fill,
-                        height: 26,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    SizedBox(
+                      child: Text(
+                        "27th June 2035",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      SizedBox(
-                        width: 10,
+                      width: _width * 0.29,
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "10:00 AM",
+                        style: TextStyle(color: Colors.white),
                       ),
-                      Image.asset(
-                        "assets/images/footer.png",
+                      width: _width * 0.27,
+                    ),
+                    SizedBox(
+                      child: Row(
+                        children: [
+                          Image.asset('assets/images/battery.png'),
+                          SizedBox(
+                            width: 2,
+                          ),
+                          Text(
+                            "99%",
+                            style: TextStyle(color: Colors.white),
+                          )
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: _height * 0.67,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/images/fuchsia_logo.png",
+                      fit: BoxFit.fill,
+                      height: 26,
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Image.asset(
+                      "assets/images/footer.png",
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -133,7 +131,7 @@ class HomePage extends StatelessWidget {
       ),
       showArrow: true,
       child: Padding(
-        padding: const EdgeInsets.only(bottom: 30),
+        padding: EdgeInsets.only(bottom: _height * 0.017),
         child: Material(
           color: Colors.transparent,
           child: Text(
@@ -210,43 +208,41 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                   backgroundColor: Colors.white,
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: _height * 0.04,
-                ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                      child: Text(
-                        "27th June 2035",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      width: _width * 0.29,
+              SizedBox(
+                height: _height * 0.04,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  SizedBox(
+                    child: Text(
+                      "27th June 2035",
+                      style: TextStyle(color: Colors.white),
                     ),
-                    SizedBox(
-                      child: Text(
-                        "10:00 AM",
-                        style: TextStyle(color: Colors.white),
-                      ),
-                      width: _width * 0.27,
+                    width: _width * 0.29,
+                  ),
+                  SizedBox(
+                    child: Text(
+                      "10:00 AM",
+                      style: TextStyle(color: Colors.white),
                     ),
-                    SizedBox(
-                      child: Row(
-                        children: [
-                          Image.asset('assets/images/battery.png'),
-                          SizedBox(
-                            width: 2,
-                          ),
-                          Text(
-                            "99%",
-                            style: TextStyle(color: Colors.white),
-                          )
-                        ],
-                      ),
+                    width: _width * 0.27,
+                  ),
+                  SizedBox(
+                    child: Row(
+                      children: [
+                        Image.asset('assets/images/battery.png'),
+                        SizedBox(
+                          width: 2,
+                        ),
+                        Text(
+                          "99%",
+                          style: TextStyle(color: Colors.white),
+                        )
+                      ],
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 20),
