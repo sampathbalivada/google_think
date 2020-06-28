@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_think/utils/profile.dart';
 
 import 'utils/appbar.dart';
 import 'utils/stats_widget.dart';
@@ -34,13 +33,9 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
           // appBar: buildAppBar(_height, _width),
           body: ListView(
             children: [
-              MyAppBar(),
+              HomeAppBar(),
               SizedBox(
                 height: _height * 0.04,
-              ),
-              Hero(
-                tag: 'profile_picture',
-                child: ProfileAvatar(radius: 58),
               ),
               SizedBox(
                 height: _height * 0.04,
