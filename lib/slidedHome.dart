@@ -146,8 +146,12 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
                     ),
                     Padding(
                       padding: EdgeInsets.only(top: 5),
-                      child: Image.asset(
-                        "assets/images/footer.png",
+                      child: Text(
+                        'Powered by Fuchsia',
+                        style: Theme.of(context)
+                            .textTheme
+                            .headline2
+                            .copyWith(fontSize: 18),
                       ),
                     ),
                   ],
