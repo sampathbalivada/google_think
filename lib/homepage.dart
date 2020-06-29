@@ -34,10 +34,10 @@ class HomePage extends StatelessWidget {
             backgroundColor: Colors.transparent,
             body: Column(
               children: [
+                MyAppBar(),
                 ListView(
                   shrinkWrap: true,
                   children: [
-                    MyAppBar(),
                     SizedBox(
                       height: _height * 0.04,
                     ),

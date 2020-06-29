@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_think/views/scenario_1/home.dart';
 
 import 'utils/appbar.dart';
 import 'utils/stats_widget.dart';
@@ -30,7 +31,6 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
         ),
         Scaffold(
           backgroundColor: Colors.transparent,
-          // appBar: buildAppBar(_height, _width),
           body: ListView(
             children: [
               HomeAppBar(),
@@ -49,24 +49,30 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
               ),
               Container(
                 child: Center(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "Google ",
-                        style: TextStyle(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ScenarioOne()));
+                    },
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          "Google ",
+                          style: TextStyle(
+                              color: Color(0xffF8F8F8),
+                              fontSize: 26,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          "Think",
+                          style: TextStyle(
                             color: Color(0xffF8F8F8),
                             fontSize: 26,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Text(
-                        "Think",
-                        style: TextStyle(
-                          color: Color(0xffF8F8F8),
-                          fontSize: 26,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
                 color: Color(0xff4285F4).withOpacity(0.8),
