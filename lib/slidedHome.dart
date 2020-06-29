@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_think/views/scenario_1/home.dart';
+import 'package:google_think/views/scenario_2/home.dart';
 
 import 'utils/appbar.dart';
 import 'utils/stats_widget.dart';
@@ -93,30 +94,39 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                child: Center(
-                  child: Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        "Google ",
-                        style: TextStyle(
-                            color: Color(0xffF8F8F8),
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold),
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ScenarioTwo()));
+                },
+                child: Hero(
+                  tag: 'scenario2',
+                  child: Container(
+                    child: Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Google ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(fontSize: 26),
+                          ),
+                          Text(
+                            "Search",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline2
+                                .copyWith(fontSize: 26),
+                          ),
+                        ],
                       ),
-                      Text(
-                        "Search",
-                        style: TextStyle(
-                          color: Color(0xffF8F8F8),
-                          fontSize: 26,
-                        ),
-                      ),
-                    ],
+                    ),
+                    color: Color(0xffF4B400).withOpacity(0.8),
+                    height: 130,
                   ),
                 ),
-                color: Color(0xffF4B400).withOpacity(0.8),
-                height: 130,
               ),
               SizedBox(
                 height: 7,

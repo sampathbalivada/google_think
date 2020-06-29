@@ -53,3 +53,17 @@ List<List<String>> chat = [
     "0xFFF8F8F8"
   ],
 ];
+
+List<List<String>> chat2 = [
+  ["Heyah! good to have you back, how can I help you?", "assist", "0xFFF8F8F8"],
+  [
+    'Guess this song " Singing from heartache from the pain Taking my message from the veins"',
+    "user",
+    "0xFFF8F8F8"
+  ],
+  [
+    "The song you're thinking of is Believer by Imagine Dragons, 2017",
+    "assist",
+    "0xFFF8F8F8"
+  ]
+];
