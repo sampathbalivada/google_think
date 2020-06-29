@@ -165,7 +165,10 @@ class ScenarioAppBar extends StatelessWidget {
             top: _height * 0.018,
             right: _width * 0.014,
           ),
-          child: Image.asset("assets/images/fuchsia_logo.png"),
+          child: Hero(
+            tag: 'profile_picture',
+            child: ProfileAvatar(radius: 24),
+          ),
         )
       ],
       backgroundColor: Colors.black,

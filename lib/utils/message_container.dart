@@ -5,8 +5,17 @@ class MessageContainer extends StatefulWidget {
   final String inputMessage;
   final String type;
   final Color color;
-  MessageContainer(
-      {@required this.inputMessage, @required this.type, @required this.color});
+  final Function increment;
+  final Function decrement;
+  final Function thinkingChanger;
+  MessageContainer({
+    @required this.inputMessage,
+    @required this.type,
+    @required this.color,
+    @required this.increment,
+    @required this.thinkingChanger,
+    @required this.decrement,
+  });
 
   @override
   _MessageContainerState createState() => _MessageContainerState();
@@ -18,16 +27,16 @@ class _MessageContainerState extends State<MessageContainer> {
     if (widget.type == 'user') {
       return BoxDecoration(
         borderRadius: BorderRadius.only(
-          topRight: Radius.circular(8),
-          bottomRight: Radius.circular(8),
+          topLeft: Radius.circular(8),
+          bottomLeft: Radius.circular(8),
         ),
         color: widget.color,
       );
     }
     return BoxDecoration(
       borderRadius: BorderRadius.only(
-        topLeft: Radius.circular(8),
-        bottomLeft: Radius.circular(8),
+        topRight: Radius.circular(8),
+        bottomRight: Radius.circular(8),
       ),
       color: widget.color,
     );
@@ -36,9 +45,31 @@ class _MessageContainerState extends State<MessageContainer> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-      flutterTts.setLanguage("en-US");
-      flutterTts.speak(widget.inputMessage);
+    if (widget.type == 'assist') {
+      speak();
+    } else {
+      think();
+    }
+  }
+
+  void speak() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      await flutterTts.setLanguage("en-US");
+      await flutterTts.speak(widget.inputMessage);
+      flutterTts.setCompletionHandler(() {
+        widget.increment();
+      });
+    });
+  }
+
+  void think() {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
+      print('Hey');
+      widget.thinkingChanger();
+      await Future.delayed(Duration(seconds: 4), () {
+        widget.thinkingChanger();
+      });
+      widget.increment();
     });
   }
 
@@ -51,7 +82,8 @@ class _MessageContainerState extends State<MessageContainer> {
       decoration: boxDecoration(),
       child: Text(
         widget.inputMessage,
-        style: TextStyle(color: Colors.black),
+        style:
+            Theme.of(context).textTheme.bodyText1.copyWith(color: Colors.black),
       ),
     );
   }

@@ -47,36 +47,39 @@ class _HomeOnSwipeState extends State<HomeOnSwipe> {
               SizedBox(
                 height: 20,
               ),
-              Container(
-                child: Center(
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ScenarioOne()));
-                    },
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          "Google ",
-                          style: TextStyle(
-                              color: Color(0xffF8F8F8),
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold),
-                        ),
-                        Text(
-                          "Think",
-                          style: TextStyle(
-                            color: Color(0xffF8F8F8),
-                            fontSize: 26,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => ScenarioOne()));
+                },
+                child: Hero(
+                  tag: 'scenario1',
+                  child: Container(
+                    child: Center(
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            "Google ",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline1
+                                .copyWith(fontSize: 26),
                           ),
-                        ),
-                      ],
+                          Text(
+                            "Think",
+                            style: Theme.of(context)
+                                .textTheme
+                                .headline2
+                                .copyWith(fontSize: 26),
+                          ),
+                        ],
+                      ),
                     ),
+                    color: Color(0xff4285F4).withOpacity(0.8),
+                    height: 130,
                   ),
                 ),
-                color: Color(0xff4285F4).withOpacity(0.8),
-                height: 130,
               ),
               SizedBox(
                 height: 7,
