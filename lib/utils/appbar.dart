@@ -111,3 +111,68 @@ class HomeAppBar extends StatelessWidget {
     );
   }
 }
+
+class ScenarioAppBar extends StatelessWidget {
+  final isThinking;
+  ScenarioAppBar({@required this.isThinking});
+  Widget setTitle(_height, _width, heading1, heading2) {
+    if (isThinking == false) {
+      return Padding(
+        padding: EdgeInsets.only(
+          top: _height * 0.018,
+        ),
+        child: Hero(
+          tag: 'title',
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Google ",
+                style: heading1,
+              ),
+              Text(
+                "Think",
+                style: heading2,
+              ),
+            ],
+          ),
+        ),
+      );
+    } else {
+      return Text("waves");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    var _height = MediaQuery.of(context).size.height;
+    var _width = MediaQuery.of(context).size.width;
+    return AppBar(
+      actions: [
+        Padding(
+          padding: EdgeInsets.only(
+            top: _height * 0.018,
+            right: _width * 0.014,
+          ),
+          child: Image.asset("assets/images/fuchsia_logo.png"),
+        )
+      ],
+      backgroundColor: Colors.transparent,
+      leading: Padding(
+        padding: EdgeInsets.only(
+          top: _height * 0.018,
+          left: _width * 0.014,
+        ),
+        child: Hero(
+          tag: 'logo',
+          child: Image.asset(
+            "assets/images/logo.png",
+          ),
+        ),
+      ),
+      title: setTitle(_height, _width, Theme.of(context).textTheme.headline1,
+          Theme.of(context).textTheme.headline2),
+      centerTitle: true,
+    );
+  }
+}

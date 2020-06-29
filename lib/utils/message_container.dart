@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 class MessageContainer extends StatelessWidget {
   final String inputMessage;
   final String type;
-
-  MessageContainer({@required this.inputMessage, @required this.type});
-
+  final color;
+  MessageContainer(
+      {@required this.inputMessage, @required this.type, @required this.color});
   BoxDecoration boxDecoration() {
     print(this.type);
     if (this.type == 'user') {
@@ -14,7 +14,7 @@ class MessageContainer extends StatelessWidget {
           topRight: Radius.circular(8),
           bottomRight: Radius.circular(8),
         ),
-        color: Colors.white,
+        color: this.color,
       );
     }
 
@@ -23,7 +23,7 @@ class MessageContainer extends StatelessWidget {
         topLeft: Radius.circular(8),
         bottomLeft: Radius.circular(8),
       ),
-      color: Color(0xFFFCEBBD),
+      color: this.color,
     );
   }
 
