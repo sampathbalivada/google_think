@@ -1,3 +1,4 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:google_think/utils/profile.dart';
 
@@ -113,34 +114,43 @@ class HomeAppBar extends StatelessWidget {
 }
 
 class ScenarioAppBar extends StatelessWidget {
-  final isThinking;
+  final bool isThinking;
   ScenarioAppBar({@required this.isThinking});
   Widget setTitle(_height, _width, heading1, heading2) {
-    if (isThinking == false) {
-      return Padding(
-        padding: EdgeInsets.only(
-          top: _height * 0.018,
-        ),
-        child: Hero(
-          tag: 'title',
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                "Google ",
-                style: heading1,
+    return Padding(
+      padding: EdgeInsets.only(
+        top: _height * 0.018,
+      ),
+      child: isThinking
+          ? Hero(
+              tag: 'thinker',
+              child: Container(
+                width: _width * 0.12,
+                height: _width * 0.12,
+                child: FlareActor(
+                  "assets/animations/think.flr",
+                  alignment: Alignment.center,
+                  animation: "Aura",
+                ),
               ),
-              Text(
-                "Think",
-                style: heading2,
+            )
+          : Hero(
+              tag: 'thinker',
+              child: Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    "Google ",
+                    style: heading1,
+                  ),
+                  Text(
+                    "Think",
+                    style: heading2,
+                  ),
+                ],
               ),
-            ],
-          ),
-        ),
-      );
-    } else {
-      return Text("waves");
-    }
+            ),
+    );
   }
 
   @override
@@ -148,6 +158,7 @@ class ScenarioAppBar extends StatelessWidget {
     var _height = MediaQuery.of(context).size.height;
     var _width = MediaQuery.of(context).size.width;
     return AppBar(
+      elevation: 0,
       actions: [
         Padding(
           padding: EdgeInsets.only(
@@ -157,7 +168,7 @@ class ScenarioAppBar extends StatelessWidget {
           child: Image.asset("assets/images/fuchsia_logo.png"),
         )
       ],
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.black,
       leading: Padding(
         padding: EdgeInsets.only(
           top: _height * 0.018,
