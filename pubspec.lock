@@ -60,6 +60,18 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_tts:
+    dependency: "direct main"
+    description:
+      name: flutter_tts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.2.3"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
   matcher:
     dependency: transitive
     description:
@@ -158,4 +170,4 @@ packages:
     version: "0.0.8"
 sdks:
   dart: ">=2.7.0 <3.0.0"
-  flutter: ">=0.1.4 <2.0.0"
+  flutter: ">=1.12.13+hotfix.5 <2.0.0"

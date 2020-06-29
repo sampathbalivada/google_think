@@ -18,10 +18,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'ProductSans',
         textTheme: TextTheme(
           headline1: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold
-          ),
+              color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           headline2: TextStyle(
             color: Colors.white,
             fontSize: 20,
