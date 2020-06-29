@@ -29,7 +29,6 @@ dependencies:
     swipedetector: ^1.2.0
     flutter_tts: ^1.2.3
     flare_flutter: ^2.0.4
-    assets_audio_player: ^2.0.6+4
 
 dev_dependencies:
     flutter_test:
@@ -49,7 +48,6 @@ flutter:
     assets:
         - assets/images/
         - assets/animations/
-        - assets/audio/
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -54,11 +54,11 @@ class _ScenarioTwoState extends State<ScenarioTwo> {
             child: Hero(
               tag: 'scenario2',
               child: ListView.builder(
-                // controller: _controller,
+                
                 shrinkWrap: true,
                 itemCount: presentChat,
                 itemBuilder: (content, index) {
-                  // _controller.jumpTo(_controller.position.maxScrollExtent);
+                
 
                   return Opacity(
                     opacity:

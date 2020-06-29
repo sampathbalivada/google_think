@@ -13,7 +13,6 @@ class _ScenarioOneState extends State<ScenarioOne> {
   bool _isThinking = false;
   int presentChat = 1;
   double opacity = 0;
-  // final _controller = ScrollController();
 
   void increment() {
     setState(() {
@@ -56,12 +55,9 @@ class _ScenarioOneState extends State<ScenarioOne> {
             child: Hero(
               tag: 'scenario1',
               child: ListView.builder(
-                // controller: _controller,
                 shrinkWrap: true,
                 itemCount: presentChat,
                 itemBuilder: (content, index) {
-                  // _controller.jumpTo(_controller.position.maxScrollExtent);
-
                   return Opacity(
                     opacity:
                         (index < presentChat - 1 || chat[index][1] == 'assist')

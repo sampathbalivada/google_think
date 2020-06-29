@@ -4,7 +4,6 @@ import 'package:google_think/utils/stats_widget.dart';
 import 'package:swipedetector/swipedetector.dart';
 import 'slidedHome.dart';
 import 'utils/profile.dart';
-// import './test_page.dart';
 
 class HomePage extends StatelessWidget {
   @override
