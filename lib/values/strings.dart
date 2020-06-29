@@ -10,12 +10,12 @@ List<List<String>> chat = [
     "0xFFFCEBBD"
   ],
   [
-    "This is the age where you don’t even need to open your mouth or make a gesture. Now, think something",
+    "Note that the chat cards which includes instructions will be of light yellow colour whereas the original responses to your questions will be of white",
     "assist",
     "0xFFFCEBBD"
   ],
   [
-    "Note that the chat cards which includes instructions will be of light yellow colour whereas the original responses to your questions will be of white",
+    "This is the age where you don’t even need to open your mouth or make a gesture. Now, think something",
     "assist",
     "0xFFFCEBBD"
   ],
@@ -26,7 +26,7 @@ List<List<String>> chat = [
   ],
   ["No, I’m not! It is Avengers Endgame in 2019.", "assist", "0xFFF8F8F8"],
   [
-    "So! the brain waves that your brains emit are being decoded and being shown in the chat from your side but the fact is you are just Thinking it, you are neither typing nor asking with your mouth.",
+    "So! the brain waves that your brains emit are being decoded and shown in the chat from your side but the fact is you are just Thinking it, you are neither typing nor asking with your mouth.",
     "assist",
     "0xFFFCEBBD"
   ],
@@ -42,7 +42,7 @@ List<List<String>> chat = [
     "0xFFF8F8F8"
   ],
   [
-    "See, now you are good to go! I’m turing off the instructory mode. Is there anything I shall do?",
+    "See, now you are good to go! I’m turing off the tutorial mode. Is there anything I shall do?",
     "assist",
     "0xFFFCEBBD"
   ],

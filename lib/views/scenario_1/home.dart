@@ -13,7 +13,7 @@ class _ScenarioOneState extends State<ScenarioOne> {
   bool _isThinking = false;
   int presentChat = 1;
   double opacity = 0;
-  final _controller = ScrollController();
+  // final _controller = ScrollController();
 
   void increment() {
     setState(() {
@@ -45,28 +45,22 @@ class _ScenarioOneState extends State<ScenarioOne> {
 
     return Scaffold(
       backgroundColor: Colors.black,
-      // floatingActionButton: FloatingActionButton(
-      //   child: Icon(Icons.add),
-      //   onPressed: () {
-      //     increment();
-      //   },
-      // ),
       body: Column(
         children: [
           ScenarioAppBar(isThinking: _isThinking),
           SizedBox(
             height: 10,
           ),
-          Hero(
-            tag: 'scenario1',
-            child: Container(
-              height: _height * 0.9,
+          Container(
+            height: _height * 0.9,
+            child: Hero(
+              tag: 'scenario1',
               child: ListView.builder(
-                controller: _controller,
+                // controller: _controller,
                 shrinkWrap: true,
                 itemCount: presentChat,
                 itemBuilder: (content, index) {
-                  _controller.jumpTo(_controller.position.maxScrollExtent);
+                  // _controller.jumpTo(_controller.position.maxScrollExtent);
 
                   return Opacity(
                     opacity:
